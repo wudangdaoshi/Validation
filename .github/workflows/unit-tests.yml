@@ -50,5 +50,7 @@ jobs:
         - /home/runner/work/Validation/Validation:/validation
 
     steps:
+      - name: Ls
+        run: ls
       - name: Run tests with PHP 5
         run: php /validation/src/Test/Test.php Unit run
