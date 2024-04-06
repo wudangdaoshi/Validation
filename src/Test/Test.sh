@@ -15,7 +15,7 @@ echo 1234;
 ls
 
 # docker run -it --rm --name php-latest -v "$PWD":/validation -w /validation/src/Test php:latest php Test.php Unit run
-docker run -it --rm --name php-latest -v "$scriptDirectory"/../../:/validation -w /validation/src/Test php:latest php Test.php Unit run
+docker run -i --rm --name php-latest -v "$scriptDirectory"/../../:/validation -w /validation/src/Test php:latest php Test.php Unit run
 returnValue=$?
 if [ $returnValue -ne 0 ]; then
     exit 1
