@@ -46,7 +46,7 @@ jobs:
     container:
       image: php:5.6-cli-alpine
       volumes:
-        - ./:/validation
+        - /home/runner/work/Validation/Validation:/validation
 
     steps:
       - name: Run tests with PHP 5
