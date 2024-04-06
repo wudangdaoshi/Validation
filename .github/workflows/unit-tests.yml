@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Unit Tests
 
 on:
   push:
@@ -10,8 +10,8 @@ permissions:
   contents: read
 
 jobs:
-  unit-test:
-    name: Unit Tests
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -34,6 +34,20 @@ jobs:
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
-
+  
     - name: Run test suite
       run: composer run-script test
+
+  php-5:
+    name: Unit Tests with PHP 5
+    runs-on: ubuntu-latest
+    needs: build
+
+    container:
+      image: php:5.6-cli-alpine
+      volumes:
+        - $GITHUB_WORKSPACE:/validation
+
+    steps:
+      - name: Run tests with PHP 5
+        run: php /validation/src/Test/Test.php Unit run
