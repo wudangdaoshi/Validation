@@ -38,6 +38,13 @@ jobs:
     - name: Run test suite
       run: composer run-script test
 
+    - name: Ls
+      run: ls
+    - name: PWD
+      run: pwd
+    - name: workspace
+      run: ls /home/runner/work/Validation/Validation
+
   php-5:
     name: Unit Tests with PHP 5
     runs-on: ubuntu-latest
