@@ -10,6 +10,10 @@ fi
 scriptPath=$(readlink -f "$0")
 scriptDirectory=$(dirname "$scriptPath")
 
+echo 1234;
+
+ls
+
 # docker run -it --rm --name php-latest -v "$PWD":/validation -w /validation/src/Test php:latest php Test.php Unit run
 docker run -it --rm --name php-latest -v "$scriptDirectory"/../../:/validation -w /validation/src/Test php:latest php Test.php Unit run
 returnValue=$?
