@@ -46,7 +46,7 @@ jobs:
     container:
       image: php:5.6-cli-alpine
       volumes:
-        - $GITHUB_WORKSPACE:/validation
+        - ${GITHUB_WORKSPACE}:/validation
 
     steps:
       - name: Run tests with PHP 5
