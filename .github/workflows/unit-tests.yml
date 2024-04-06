@@ -49,6 +49,6 @@ jobs:
       - name: PWD
         run: pwd
       - name: workspace
-        run: ls /home/runner/work/Validation
+        run: ls /home/runner/work/Validation/Validation
       - name: Run tests with PHP 5
         run: php /validation/src/Test/Test.php Unit run
