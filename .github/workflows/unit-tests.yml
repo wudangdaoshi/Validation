@@ -36,7 +36,8 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
   
     - name: Run test suite
-      run: composer run-script multi-test
+      shell: bash
+      run: ./src/Test/Test.sh
 
   php-5:
     name: Unit Tests with PHP 5
